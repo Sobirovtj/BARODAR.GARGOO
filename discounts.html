@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="tg">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +12,7 @@
             text-align: center;
             padding: 20px;
         }
+
         .card {
             max-width: 600px;
             margin: auto;
@@ -19,29 +21,53 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
         }
+
         h1 {
             font-size: 24px;
             color: #333;
         }
+
         p {
             font-size: 16px;
             color: #555;
         }
+
         .phone {
             margin: 10px 0;
             font-size: 18px;
             font-weight: bold;
             color: #007BFF;
         }
+
         .phone a {
             text-decoration: none;
             color: #007BFF;
         }
+
         .phone a:hover {
             text-decoration: underline;
         }
+
+        #back-button {
+            display: block;
+            width: 150px;
+            padding: 10px;
+            font-size: 16px;
+            margin: 20px auto;
+            text-align: center;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        #back-button:hover {
+            background-color: #45a049;
+        }
     </style>
 </head>
+
 <body>
     <div class="card">
         <h1>🚚 Гузоштани заявка барои доставка</h1>
@@ -49,6 +75,17 @@
         <p>☎️ Шумо метавонед бо чунин роҳҳо ба мо тамос бароед:</p>
         <p class="phone">📞 Телефон барои даставка: <a href="tel:+992780310909">+992780310909</a></p>
         <p class="phone">📞 Телефон барои ёри: <a href="tel:+992000208746">+992000208746</a></p>
+
+        <!-- Back Button -->
+        <button id="back-button" onclick="goBack()">Назад</button>
     </div>
+
+    <script>
+        // Function to go back to the previous page
+        function goBack() {
+            window.history.back(); // This will navigate the user to the previous page
+        }
+    </script>
 </body>
+
 </html>
