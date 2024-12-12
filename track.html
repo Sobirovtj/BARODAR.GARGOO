@@ -58,12 +58,33 @@
             color: green;
             /* Цвет текста для найденных номеров */
         }
+
+        #back-button {
+            display: block;
+            width: 150px;
+            padding: 10px;
+            font-size: 16px;
+            margin: 20px auto;
+            text-align: center;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        #back-button:hover {
+            background-color: #45a049;
+        }
     </style>
 </head>
 
 <body>
 
     <h1 style="text-align:center;"> 🔍Тафтиш кардани трек-код</h1>
+
+    <!-- Back Button -->
+    <button id="back-button" onclick="goBack()">Назад</button>
 
     <input type="text" id="search-box" placeholder="Искать номер..." oninput="searchProducts()">
 
@@ -162,6 +183,11 @@
                 noResultsMessage.style.display = 'none'; // Скрываем сообщение о ненайденных номерах
                 foundResultsMessage.style.display = 'block'; // Показываем сообщение о найденных номерах
             }
+        }
+
+        // Функция для перехода на предыдущую страницу
+        function goBack() {
+            window.history.back(); // Возвращает пользователя на предыдущую страницу
         }
     </script>
 
