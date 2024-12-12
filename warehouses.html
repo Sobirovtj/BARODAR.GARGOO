@@ -59,6 +59,21 @@
         .phone a:hover {
             text-decoration: underline;
         }
+
+        .back-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .back-button:hover {
+            background-color: #0056b3;
+        }
     </style>
 </head>
 
@@ -73,6 +88,9 @@
         <p class="address-details">📍 Шаҳр: Душанбе,</p>
         <p class="phone">📞 Телефон барои даставка: <a href="tel:+99213579266474">+99213579266474</a></p>
     </div>
+
+    <!-- Back Button -->
+    <button class="back-button" onclick="window.history.back()">Назад</button>
 
 </body>
 
