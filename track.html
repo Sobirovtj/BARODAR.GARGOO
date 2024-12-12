@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Поиск номеров</title>
+    <title> Тафтиш кардани трек-код</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -44,14 +44,31 @@
             font-size: 18px;
             margin-top: 10px;
         }
+
+        #no-results,
+        #found-results {
+            text-align: center;
+            font-size: 18px;
+            color: red;
+            display: none;
+            /* Скрыто по умолчанию */
+        }
+
+        #found-results {
+            color: green;
+            /* Цвет текста для найденных номеров */
+        }
     </style>
 </head>
 
 <body>
 
-    <h1 style="text-align:center;">Поиск номеров</h1>
+    <h1 style="text-align:center;"> 🔍Тафтиш кардани трек-код</h1>
 
     <input type="text" id="search-box" placeholder="Искать номер..." oninput="searchProducts()">
+
+    <div id="found-results">Ёфт шуд</div> <!-- Сообщение о найденном номере -->
+    <div id="no-results">Ёфт нашуд</div> <!-- Сообщение о ненайденном результате -->
 
     <div id="product-list">
         <!-- Пример номеров -->
@@ -122,15 +139,29 @@
         function searchProducts() {
             const query = document.getElementById('search-box').value.toLowerCase();
             const products = document.querySelectorAll('.product');
+            let found = false; // Флаг для проверки найденных результатов
 
             products.forEach(product => {
                 const productName = product.getAttribute('data-name').toLowerCase();
                 if (productName.includes(query)) {
                     product.style.display = 'block'; // Показываем продукт
+                    found = true; // Если хотя бы один продукт найден, изменяем флаг
                 } else {
                     product.style.display = 'none'; // Скрываем продукт
                 }
             });
+
+            // Показать сообщение о наличии номера
+            const noResultsMessage = document.getElementById('no-results');
+            const foundResultsMessage = document.getElementById('found-results');
+
+            if (!found) {
+                noResultsMessage.style.display = 'block'; // Показываем сообщение, что нет такого номера
+                foundResultsMessage.style.display = 'none'; // Скрываем сообщение о найденных номерах
+            } else {
+                noResultsMessage.style.display = 'none'; // Скрываем сообщение о ненайденных номерах
+                foundResultsMessage.style.display = 'block'; // Показываем сообщение о найденных номерах
+            }
         }
     </script>
 
