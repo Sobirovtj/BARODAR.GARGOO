@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Поиск номеров</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        #search-box {
+            margin-bottom: 20px;
+            padding: 10px;
+            font-size: 16px;
+            width: 300px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        #product-list {
+            display: block;
+            /* Используем блочное отображение, чтобы элементы шли один под другим */
+            margin-top: 20px;
+        }
+
+        .product {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin: 10px 0;
+            width: 100%;
+            max-width: 300px;
+            /* Ограничиваем ширину карточек */
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            background-color: #fff;
+            border-radius: 8px;
+        }
+
+        .product-name {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 style="text-align:center;">Поиск номеров</h1>
+
+    <input type="text" id="search-box" placeholder="Искать номер..." oninput="searchProducts()">
+
+    <div id="product-list">
+        <!-- Пример номеров -->
+        <div class="product" data-name="9803275466749">
+            <p class="product-name">9803275466749</p>
+        </div>
+        <div class="product" data-name="YT8719598641179">
+            <p class="product-name">YT8719598641179</p>
+        </div>
+        <div class="product" data-name="JT5329060674942">
+            <p class="product-name">JT5329060674942</p>
+        </div>
+        <div class="product" data-name="78463881075534">
+            <p class="product-name">78463881075534</p>
+        </div>
+        <div class="product" data-name="78463405934038">
+            <p class="product-name">78463405934038</p>
+        </div>
+        <div class="product" data-name="78463649719348">
+            <p class="product-name">78463649719348</p>
+        </div>
+        <div class="product" data-name="78463804507669">
+            <p class="product-name">78463804507669</p>
+        </div>
+        <div class="product" data-name="YT8720786380558">
+            <p class="product-name">YT8720786380558</p>
+        </div>
+        <div class="product" data-name="YT8719558119654">
+            <p class="product-name">YT8719558119654</p>
+        </div>
+        <div class="product" data-name="YT8719898238309">
+            <p class="product-name">YT8719898238309</p>
+        </div>
+        <div class="product" data-name="9803280329404">
+            <p class="product-name">9803280329404</p>
+        </div>
+        <div class="product" data-name="9803350912535">
+            <p class="product-name">9803350912535</p>
+        </div>
+        <div class="product" data-name="YT8719586838439">
+            <p class="product-name">YT8719586838439</p>
+        </div>
+        <div class="product" data-name="YT8719561693066">
+            <p class="product-name">YT8719561693066</p>
+        </div>
+        <div class="product" data-name="YT8720790126364">
+            <p class="product-name">YT8720790126364</p>
+        </div>
+        <div class="product" data-name="YT8720783182050">
+            <p class="product-name">YT8720783182050</p>
+        </div>
+        <div class="product" data-name="YT8718407439583">
+            <p class="product-name">YT8718407439583</p>
+        </div>
+        <div class="product" data-name="78463763092103">
+            <p class="product-name">78463763092103</p>
+        </div>
+        <div class="product" data-name="78463877749111">
+            <p class="product-name">78463877749111</p>
+        </div>
+        <div class="product" data-name="78463972972850">
+            <p class="product-name">78463972972850</p>
+        </div>
+    </div>
+
+    <script>
+        // Функция поиска номеров
+        function searchProducts() {
+            const query = document.getElementById('search-box').value.toLowerCase();
+            const products = document.querySelectorAll('.product');
+
+            products.forEach(product => {
+                const productName = product.getAttribute('data-name').toLowerCase();
+                if (productName.includes(query)) {
+                    product.style.display = 'block'; // Показываем продукт
+                } else {
+                    product.style.display = 'none'; // Скрываем продукт
+                }
+            });
+        }
+    </script>
+
+</body>
+
+</html>
